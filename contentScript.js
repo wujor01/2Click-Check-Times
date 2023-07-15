@@ -1,10 +1,11 @@
 document.addEventListener("dblclick", function (event) {
     try {
         var selectedText = window.getSelection().toString();
-        const unixTimestamp = parseInt(selectedText);
-        const date = new Date(unixTimestamp * 1000);
+        const tick = parseInt(selectedText);
+        const date = new Date(tick);
 
-        if (date > new Date(2000, 0, 1)) {
+        //new Date(2000,0,1) = 946659600000
+        if (tick > 946659600000) {
             // Create a popover element
             var popover = document.createElement("div");
             popover.className = "my-popover";
@@ -17,7 +18,9 @@ document.addEventListener("dblclick", function (event) {
 
             // Handle clicks on the page
             document.addEventListener("click", function (e) {
-                popover.remove();
+                if (e.target.className != popover.className) {
+                    popover.remove();
+                }
             });
         }
     } catch (error) {
