@@ -45,7 +45,7 @@ function convertDateToString(date) {
     var timezoneOffsetHours = Math.floor(date.getTimezoneOffset() / 60);
 
     // Construct the formatted string
-    var formattedDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds + ' GMT' + (timezoneOffsetHours < 0 ? '+' : '') + Math.abs(timezoneOffsetHours);
+    var formattedDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds + ' GMT' + (timezoneOffsetHours < 0 ? '+' : '-') + Math.abs(timezoneOffsetHours);
 
     return formattedDate;
 }
