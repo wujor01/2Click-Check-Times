@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "2Click Check Times",
+  "name": "2Click Check Time",
   "version": "1.0",
   "permissions": ["activeTab"],
   "content_scripts": [
@@ -9,5 +9,10 @@
       "js": ["contentScript.js"],
       "css": ["styles.css"]
     }
-  ]
+  ],
+  "description": "Convert ticks to a date.",
+  "author": "Wujo",
+  "icons": {
+    "128": "icon.png"
+  }
 }
